@@ -12,4 +12,6 @@ For the record: It is not actually a good idea to make a habit of
 Always read the source of what you run before you run it.
 
 This script is setup for PPPwn to run at boot and is configured to run on ethernet port 1.  
-This was tested on OpenWRT 23.05, if you have issues update your OpenWRT to the most recent version.
+
+This was tested on OpenWRT 23.05 on a Linksys WRT 3200ACM , if you have issues try with a different build of C++ PPPwn as I used the RPI Zero version https://nightly.link/xfangfang/PPPwn_cpp/workflows/ci.yaml/main?status=completed 
+Or update your OpenWRT to the most recent version.
