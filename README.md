@@ -32,4 +32,4 @@ For the record: It is not actually a good idea to make a habit of
 `curl $(random_script_from_the_internets) | bash"`  
 Always read the source of what you run before you run it.
 
-This script is setup for PPPwn to run at boot and is configured to run on ethernet port 1.
+This script is setup for PPPwn to run as a daemon and is configured to run on ethernet port 1.
