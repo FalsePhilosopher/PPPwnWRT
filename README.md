@@ -52,7 +52,13 @@ pppwn --interface INTERFACE --fw 11.00 --stage1 "/etc/PPPwnWRT/stage1.bin" --sta
 - Choose `Do Not Use` for `Proxy Server`
 - Choose `Test Internet Connection`
 
-So there isn't the overhead of this running all the time you need to do step's 3/4 every time you want to root your PS4, you don't need to do the internet connection set up again just test the internet connection.
+So there isn't the overhead of this running all the time you need to do step's 3/4 every time you want to root your PS4, you don't need to do the internet connection set up again just test the internet connection.  
+You can SSH in and run the command again or install the luci web interface for customs commands with
+```
+opkg install luci-app-commands
+```
+In the web interface you can add the command for pppwn with your FW/interface under System>Custom Commands and run it from there you just won't be able to see the live output.
+
 
 If you would like to make this a dedicated device you can If you can make it a daemon with an init script https://openwrt.org/docs/techref/initscripts  
 or run it at startup by running for 9.00  
