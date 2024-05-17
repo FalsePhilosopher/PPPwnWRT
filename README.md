@@ -36,11 +36,11 @@ Your interfaces are now displayed for you to replace `INTERFACE` in step 3 with 
 
 3. Run for 9.00
 ```
-pppwn --interface INTERFACE --fw 900 --stage1 "stage1.bin" --stage2 "stage2.bin" --auto-retry
+pppwn --interface INTERFACE --fw 900 --stage1 "/etc/PPPwnWRT/stage1.bin" --stage2 "/etc/PPPwnWRT/stage2.bin" --auto-retry
 ```
 for 11.00
 ```
-pppwn --interface INTERFACE --fw 11.00 --stage1 "stage1.bin" --stage2 "stage2.bin" --auto-retry
+pppwn --interface INTERFACE --fw 11.00 --stage1 "/etc/PPPwnWRT/stage1.bin" --stage2 "/etc/PPPwnWRT/stage2.bin" --auto-retry
 ```
 4. On your PS4:
 
