@@ -6,5 +6,3 @@ cd /
 wget https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/PPPwnWRT11RPI.zip
 unzip PPPwnWRT11RPI.zip
 rm PPPwnWRT11RPI.zip
-/etc/init.d/PPPwnWRT enable
-reboot

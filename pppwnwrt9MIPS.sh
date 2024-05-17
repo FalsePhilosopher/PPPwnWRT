@@ -6,5 +6,3 @@ cd /
 wget https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/PPPwnWRT9MIPS.zip
 unzip PPPwnWRT9MIPS.zip
 rm PPPwnWRT9MIPS.zip
-/etc/init.d/PPPwnWRT enable
-reboot
