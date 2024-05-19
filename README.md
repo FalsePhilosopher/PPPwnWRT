@@ -35,7 +35,7 @@ For the record: It is not actually a good idea to make a habit of
 `curl $(random_script_from_the_internets) | bash"`  
 Always read the source of what you run before you run it.
 
-Your interfaces are now displayed for you to replace `INTERFACE` in step 3 with your ethernet interface of choice.
+Your interfaces are now displayed for you to replace `INTERFACE` in step 5 with your ethernet interface of choice.
 
 5. Run pppwn
 
