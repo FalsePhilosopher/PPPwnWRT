@@ -85,3 +85,5 @@ https://github.com/SiSTR0/PPPwn
 Repo: https://github.com/xfangfang/PPPwn_cpp  
 Nightly build server: https://nightly.link/xfangfang/PPPwn_cpp/workflows/ci.yaml/main?status=completed  
 5. scp or sftp the executable to /bin
+6. install libpcap1
+7. run pppwn
