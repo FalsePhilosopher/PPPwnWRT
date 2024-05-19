@@ -3,7 +3,7 @@
 OpenWRT install of PPPwn C++ version by xfangfang https://github.com/xfangfang/PPPwn_cpp
 
 ### Install 
-1. Place the goldhen.bin from a golden 2.4b17 and up release on the root of a usb drive formatted in exfat or fat32
+1. Place the goldhen.bin from a golden 2.4b17 and up release on the root of a usb drive formatted in exfat or fat32  
 https://github.com/GoldHEN/GoldHEN/releases/download/2.4b17/GoldHEN_v2.4b17.7z
 2. Plug the USB drive into your PS4
 3. SSH into your OpenWRT router  
