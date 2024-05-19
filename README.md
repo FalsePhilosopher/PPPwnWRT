@@ -3,8 +3,10 @@
 OpenWRT install of PPPwn C++ version by xfangfang https://github.com/xfangfang/PPPwn_cpp
 
 ### Install 
-1. SSH into your OpenWRT router  
-2. Run for 9.00 RPI zero build  
+1. Place the goldhen.bin from a golden 2.4b17 and up release on the root of a usb drive formatted in exfat or fat32 https://github.com/GoldHEN/GoldHEN/releases/download/2.4b17/GoldHEN_v2.4b17.7z
+2. Plug the USB drive into your PS4
+3. SSH into your OpenWRT router  
+4. Run for 9.00 RPI zero build  
 ```
 wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/pppwnwrt9RPI.sh | sh && pppwn list
 ```
@@ -34,7 +36,7 @@ Always read the source of what you run before you run it.
 
 Your interfaces are now displayed for you to replace `INTERFACE` in step 3 with your ethernet interface of choice.
 
-3. Run pppwn
+5. Run pppwn
 
 For 9.00  
 ```
@@ -44,7 +46,7 @@ For 11.00
 ```
 pppwn --interface INTERFACE --fw 1100 --stage1 "/etc/PPPwnWRT/stage1.bin" --stage2 "/etc/PPPwnWRT/stage2.bin" --auto-retry
 ```
-4. On your PS4:
+6. On your PS4:
 
 - Go to `Settings` and then `Network`
 - Select `Set Up Internet connection` and choose `Use a LAN Cable`
@@ -54,7 +56,9 @@ pppwn --interface INTERFACE --fw 1100 --stage1 "/etc/PPPwnWRT/stage1.bin" --stag
 - Choose `Do Not Use` for `Proxy Server`
 - Choose `Test Internet Connection`
 
-So there isn't the overhead of this running all the time you need to do step's 3/4 every time you want to root your PS4, you don't need to do the internet connection set up again just test the internet connection.  
+
+
+So there isn't the overhead of this running all the time you need to do step's 5/6 every time you want to root your PS4, you don't need to do the internet connection set up again just test the internet connection.  
 
 You can SSH in and run pppwn again or install the luci web interface for customs commands with
 ```
