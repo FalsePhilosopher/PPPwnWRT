@@ -77,3 +77,11 @@ for 11.00
 ```
 sed -i '3 i\pppwn --interface INTERFACE --fw 1100 --stage1 "/etc/PPPwnWRT/stage1.bin" --stage2 "/etc/PPPwnWRT/stage2.bin" --auto-retry' /etc/rc.local
 ```
+### Manual Install
+1. git clone sistro's pppwn repo and build pppwn S1 and S2 PL's for your FW
+https://github.com/SiSTR0/PPPwn
+2. Put the S1 and S2 PL's in a dir and scp or sftp the dir to /etc
+3. git clone and build pppwn_cpp or pull from their nightly build server  
+Repo: https://github.com/xfangfang/PPPwn_cpp  
+Nightly build server: https://nightly.link/xfangfang/PPPwn_cpp/workflows/ci.yaml/main?status=completed  
+5. scp or sftp the executable to /bin
