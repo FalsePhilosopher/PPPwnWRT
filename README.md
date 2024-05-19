@@ -59,9 +59,9 @@ pppwn --interface INTERFACE --fw 1100 --stage1 "/etc/PPPwnWRT/stage1.bin" --stag
 
 
 
-So there isn't the overhead of this running all the time you need to do step's 5/6 every time you want to root your PS4, you don't need to do the internet connection set up again just test the internet connection.  
+So there isn't the overhead of this running all the time you need to do step's 5/6 every time you want to root your PS4, you don't need to do the internet connection set up again just test the internet connection. The custom version of stage2 first looks for the payload in the root directory of the USB drive, and if found, it is copied to the internal HDD at this path: /data/GoldHEN/payloads/goldhen.bin. The internal payload is then loaded and is no longer needed on the external USB drive. You can remove the usb drive from your ps4 after it has been run the first time and you won't need it again.  
 
-You can SSH in and run pppwn again or install the luci web interface for customs commands with
+To root your console again you can SSH in and run pppwn again or install the luci web interface for customs commands with
 ```
 opkg install luci-app-commands
 ```
