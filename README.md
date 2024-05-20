@@ -19,6 +19,10 @@ wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/pppwnwrt9MIPS
 ```
 wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/pppwnwrt9CA7.sh | sh && pppwn list
 ```
+9.00 64 bit build  
+```
+wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/pppwnwrt964.sh | sh && pppwn list
+```
 11.00 RPI zero build  
 ```
 wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/pppwnwrt11RPI.sh | sh && pppwn list
@@ -30,6 +34,10 @@ wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/pppwnwrt11MIP
 11.00 Cortex A7 build  
 ```
 wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/pppwnwrt11CA7.sh | sh && pppwn list
+```
+11.00 64 Bit build  
+```
+wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/pppwnwrt1164.sh | sh && pppwn list
 ```  
 For the record: It is not actually a good idea to make a habit of  
 `curl $(random_script_from_the_internets) | bash"`  
