@@ -119,6 +119,9 @@ This will trigger pppwn to run when pressed for less then 2 seconds and when pre
 Triggering your LED to turn on and off during the PL is specific to your router which is why it was left out of this config.  
 Further resources with LED examples can be found here https://openwrt.org/docs/guide-user/hardware/hardware.button
 
+### Kill Script
+Comes with a kill script in /root that used Modded Warfare's [kill script](https://github.com/MODDEDWARFARE/PPPwn_WRT/blob/main/kill.sh) as a template, but was modified to work with this setup.
+
 ### Dedicated Device
 
 If you would like to make this a dedicated device you can If you can make it a daemon with an init script https://openwrt.org/docs/techref/initscripts  
