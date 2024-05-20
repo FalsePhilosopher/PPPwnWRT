@@ -121,6 +121,7 @@ Further resources with LED examples can be found here https://openwrt.org/docs/g
 
 ### Kill Script
 Comes with a kill script in /root that used Modded Warfare's [kill script](https://github.com/MODDEDWARFARE/PPPwn_WRT/blob/main/kill.sh) as a template, but was modified to work with this setup.
+The original script used [this resource](https://askubuntu.com/questions/180336/how-to-find-the-process-id-pid-of-a-running-terminal-program) as a template.
 
 ### Dedicated Device
 
