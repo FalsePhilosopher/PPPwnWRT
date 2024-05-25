@@ -1,61 +1,56 @@
+
 # OpenWRT PPPwn
 
 OpenWRT install of PPPwn C++ version by xfangfang https://github.com/xfangfang/PPPwn_cpp
 
-### Install 
-1. Place the goldhen.bin from a goldhen 2.4b17 and up release on the root of a usb drive formatted in exfat or fat32  
+### Install
+1. Place the goldhen.bin from a goldhen 2.4b17 and up release on the root of a usb drive formatted in exfat or fat32
 https://github.com/GoldHEN/GoldHEN/releases/download/2.4b17/GoldHEN_v2.4b17.7z
 2. Plug the USB drive into your PS4
-3. SSH into your OpenWRT router  
-4. Run for 9.00 RPI zero build  
+3. SSH into your OpenWRT router
+4. Run for:
+
+Raspberry Pi build:
 ```
-wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/pppwnwrt9RPI.sh | sh && pppwn list
+wget -q https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/RPi.sh | sh
 ```
-9.00 MIPS build  
+MIPS build
 ```
-wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/pppwnwrt9MIPS.sh | sh && pppwn list
+wget -q https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/MIPS.sh | sh
 ```
-9.00 Cortex A7 build  
+Cortex A7 build
 ```
-wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/pppwnwrt9CA7.sh | sh && pppwn list
+wget -q https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/CortexA7.sh | sh
 ```
-9.00 64 bit build  
+64 bit build
 ```
-wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/pppwnwrt964.sh | sh && pppwn list
+wget -q https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/x64.sh | sh
 ```
-11.00 RPI zero build  
-```
-wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/pppwnwrt11RPI.sh | sh && pppwn list
-```
-11.00 MIPS build  
-```
-wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/pppwnwrt11MIPS.sh | sh && pppwn list
-```
-11.00 Cortex A7 build  
-```
-wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/pppwnwrt11CA7.sh | sh && pppwn list
-```
-11.00 64 Bit build  
-```
-wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/pppwnwrt1164.sh | sh && pppwn list
-```  
-For the record: It is not actually a good idea to make a habit of  
-`curl $(random_script_from_the_internets) | bash"`  
+
+For the record: It is not actually a good idea to make a habit of
+`curl $(random_script_from_the_internets) | bash"`
 Always read the source of what you run before you run it.
 
 Your interfaces are now displayed for you to replace `INTERFACE` in step 5 with your ethernet interface of choice.
 
-5. Run pppwn
+5. Edit `/etc/pppwnwrt/pppwnwrt.sh` script
 
-For 9.00  
+For 9.00
 ```
-pppwn --interface INTERFACE --fw 900 --stage1 "/etc/PPPwnWRT/stage1.bin" --stage2 "/etc/PPPwnWRT/stage2.bin" --auto-retry
+pppwn -i INTERFACE --fw 900 -s1 "/etc/pppwnwrt/stage1_900.bin" -s2 "/etc/pppwnwrt/stage2.bin" -a
 ```
 For 11.00
 ```
-pppwn --interface INTERFACE --fw 1100 --stage1 "/etc/PPPwnWRT/stage1.bin" --stage2 "/etc/PPPwnWRT/stage2.bin" --auto-retry
+pppwn -i INTERFACE --fw 1100 -s1 "/etc/pppwnwrt/stage1_1100.bin" -s2 "/etc/pppwnwrt/stage2.bin" -a
 ```
-6. On your PS4:
+(If you're low on space, you can remove unneeded stage1.bin file)
+
+6. Enable auto-start in OpenWRT
+- `/etc/init.d/pppwnwrt enable`
+- `/etc/init.d/pppwnwrt start`
+- `top -d 1 | grep pppwn` to ensure pppwn is running
+
+7. On your PS4:
 
 - Go to `Settings` and then `Network`
 - Select `Set Up Internet connection` and choose `Use a LAN Cable`
@@ -64,37 +59,35 @@ pppwn --interface INTERFACE --fw 1100 --stage1 "/etc/PPPwnWRT/stage1.bin" --stag
 - Choose `Automatic` for `DNS Settings` and `MTU Settings`
 - Choose `Do Not Use` for `Proxy Server`
 - Choose `Test Internet Connection`
+- Wait until `PPPwned` message appears
+- Head back to `Set Up Internet connection` and change to your normal internet settings or turn off internet connection
 
+From now on, your PS4 will be jailbroken everytime it is powered on, as long as it's connected to the router. Unfortunately, it does not have output, so the only way to determine if the script is running is by looking for `Cannot set up internet connection` message, or by looking for 'loading symbols' on the bottom of `What's new` app. Keep in mind, that script will run endlessly, so it will try to root your console even when it's already rooted. To prevent that, script waits 60 seconds after successful jailbreak, so you have time to turn off internet connection or change PPPoE to your usual internet settings. You don't need to do the internet connection set up again, just press `Test Internet Connection`, or if PPPoE already set up, wait until `PPPwned` message appears. The custom version of stage2 first looks for the payload in the root directory of the USB drive, and if found, it is copied to the internal HDD at this path: /data/GoldHEN/payloads/goldhen.bin. The internal payload is then loaded and is no longer needed on the external USB drive. You can remove the usb drive from your ps4 after it has been run the first time and you won't need it again.
 
+### Kill Script
+Comes with a kill script in /root that used Modded Warfare's [kill script](https://github.com/MODDEDWARFARE/PPPwn_WRT/blob/main/kill.sh) as a template, but was modified to work with this setup.
+The original script used [this resource](https://askubuntu.com/questions/180336/how-to-find-the-process-id-pid-of-a-running-terminal-program) as a template.
 
-So there isn't the overhead of this running all the time you need to do step's 5/6 every time you want to root your PS4, you don't need to do the internet connection set up again just test the internet connection. The custom version of stage2 first looks for the payload in the root directory of the USB drive, and if found, it is copied to the internal HDD at this path: /data/GoldHEN/payloads/goldhen.bin. The internal payload is then loaded and is no longer needed on the external USB drive. You can remove the usb drive from your ps4 after it has been run the first time and you won't need it again.  
-
-To root your console again you can SSH in and run pppwn again or install the luci web interface for customs commands with
-```
-opkg install luci-app-commands
-```
-In the web interface you can add the pppwn command under System>Custom Commands and run it from there, you just won't be able to see the live output.
-
-### WPS Button Exploit Trigger  
-1. Install kmod-button-hotplug  
-`opkg install kmod-button-hotplug`  
-2. Create a file called `wps` in /etc/hotplug.d/button/ with the contents below.  
+### WPS Button Exploit Trigger
+1. Install kmod-button-hotplug
+`opkg install kmod-button-hotplug`
+2. Create a file called `wps` in /etc/hotplug.d/button/ with the contents below.
 ```
 source /lib/functions.sh
- 
+
 do_button () {
     local button
     local action
     local handler
     local min
     local max
- 
+
     config_get button "${1}" button
     config_get action "${1}" action
     config_get handler "${1}" handler
     config_get min "${1}" min
     config_get max "${1}" max
- 
+
     [ "${ACTION}" = "${action}" -a "${BUTTON}" = "${button}" -a -n "${handler}" ] && {
         [ -z "${min}" -o -z "${max}" ] && eval ${handler}
         [ -n "${min}" -a -n "${max}" ] && {
@@ -102,11 +95,11 @@ do_button () {
         }
     }
 }
- 
+
 config_load system
 config_foreach do_button button
 EOF
- 
+
 uci add system button
 uci set system.@button[-1].button="wps"
 uci set system.@button[-1].action="released"
@@ -123,39 +116,24 @@ uci commit system
 ```
 Be sure to put the proper interface/FW in the `handler` line.
 
-This will trigger pppwn to run when pressed for less then 2 seconds and when pressed for 3-10 seconds will trigger the stock wps functionality.  
-Triggering your LED to turn on and off during the PL is specific to your router which is why it was left out of this config.  
+This will trigger pppwn to run when pressed for less then 2 seconds and when pressed for 3-10 seconds will trigger the stock wps functionality.
+Triggering your LED to turn on and off during the payload is specific to your router which is why it was left out of this config.
+If you set up auto-start, disable it by running `/etc/init.d/pppwnwrt disable` and `/etc/init.d/pppwnwrt stop`
 Further resources with LED examples can be found here https://openwrt.org/docs/guide-user/hardware/hardware.button
-
-### Kill Script
-Comes with a kill script in /root that used Modded Warfare's [kill script](https://github.com/MODDEDWARFARE/PPPwn_WRT/blob/main/kill.sh) as a template, but was modified to work with this setup.
-The original script used [this resource](https://askubuntu.com/questions/180336/how-to-find-the-process-id-pid-of-a-running-terminal-program) as a template.
-
-### Dedicated Device
-
-If you would like to make this a dedicated device you can If you can make it a daemon with an init script https://openwrt.org/docs/techref/initscripts  
-or run it at startup by running for 9.00  
-```
-sed -i '3 i\pppwn --interface INTERFACE --fw 900 --stage1 "/etc/PPPwnWRT/stage1.bin" --stage2 "/etc/PPPwnWRT/stage2.bin" --auto-retry' /etc/rc.local
-```
-for 11.00
-```
-sed -i '3 i\pppwn --interface INTERFACE --fw 1100 --stage1 "/etc/PPPwnWRT/stage1.bin" --stage2 "/etc/PPPwnWRT/stage2.bin" --auto-retry' /etc/rc.local
-```
 
 ### Manual Install
 1. git clone sistro's pppwn repo and build pppwn S1 and S2 PL's for your FW
 https://github.com/SiSTR0/PPPwn
 2. Put the S1 and S2 PL's in a dir name `PPPwnWRT` and scp or sftp the dir to /etc
-3. git clone and build pppwn_cpp or pull from their nightly build server  
-Repo: https://github.com/xfangfang/PPPwn_cpp  
-Nightly build server: https://nightly.link/xfangfang/PPPwn_cpp/workflows/ci.yaml/main?status=completed  
+3. git clone and build pppwn_cpp or pull from their nightly build server
+Repo: https://github.com/xfangfang/PPPwn_cpp
+Nightly build server: https://nightly.link/xfangfang/PPPwn_cpp/workflows/ci.yaml/main?status=completed
 4. scp or sftp the executable to /bin
 5. Install libpcap1
 6. Run pppwn
 
 ### DD-WRT Install
-DD-WRT uses a different package manager and pcap package, so the OpenWRT install script above will not work for DD-WRT.  
+DD-WRT uses a different package manager and pcap package, so the OpenWRT install script above will not work for DD-WRT.
 1. Follow the manual install method to step 4
 2. Install libpcap `ipkg install libpcap`
 3. Run pppwn
