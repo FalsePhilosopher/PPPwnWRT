@@ -103,7 +103,7 @@ EOF
 uci add system button
 uci set system.@button[-1].button="wps"
 uci set system.@button[-1].action="released"
-uci set system.@button[-1].handler="pppwn --interface INTERFACE --fw 900 --stage1 "/etc/PPPwnWRT/stage1.bin" --stage2 "/etc/PPPwnWRT/stage2.bin" --auto-retry"
+uci set system.@button[-1].handler="pppwn --interface INTERFACE --fw 900 --stage1 "/etc/pppwnwrt/stage1.bin" --stage2 "/etc/pppwnwrt/stage2.bin" --auto-retry"
 uci set system.@button[-1].min="0"
 uci set system.@button[-1].max="2"
 uci add system button
@@ -124,7 +124,7 @@ Further resources with LED examples can be found here https://openwrt.org/docs/g
 ### Manual Install
 1. git clone sistro's pppwn repo and build pppwn S1 and S2 PL's for your FW
 https://github.com/SiSTR0/PPPwn
-2. Put the S1 and S2 PL's in a dir name `PPPwnWRT` and scp or sftp the dir to /etc
+2. Put the S1 and S2 PL's in a dir name `pppwnwrt` and scp or sftp the dir to /etc
 3. git clone and build pppwn_cpp or pull from their nightly build server
 Repo: https://github.com/xfangfang/PPPwn_cpp
 Nightly build server: https://nightly.link/xfangfang/PPPwn_cpp/workflows/ci.yaml/main?status=completed
