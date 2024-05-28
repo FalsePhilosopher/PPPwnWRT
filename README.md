@@ -5,30 +5,30 @@ OpenWRT install of PPPwn C++ version by xfangfang https://github.com/xfangfang/P
 
 ### Install
 1. Place the goldhen.bin from a goldhen 2.4b17 and up release on the root of a usb drive formatted in exfat or fat32
-https://github.com/GoldHEN/GoldHEN/releases/download/2.4b17/GoldHEN_v2.4b17.7z
+https://github.com/GoldHEN/GoldHEN/releases
 2. Plug the USB drive into your PS4
 3. SSH into your OpenWRT router
 4. Run for:
 
 Raspberry Pi build:
 ```
-wget -q https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/RPi.sh | sh
+wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/RPi.sh | sh
 ```
 MIPS build
 ```
-wget -q https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/MIPS.sh | sh
+wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/MIPS.sh | sh
 ```
 Cortex A7 build
 ```
-wget -q https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/CortexA7.sh | sh
+wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/CortexA7.sh | sh
 ```
 64 bit build
 ```
-wget -q https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/x64.sh | sh
+wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/x64.sh | sh
 ```
 
 For the record: It is not actually a good idea to make a habit of
-`curl $(random_script_from_the_internets) | bash"`
+`wget $(random_script_from_the_internets) | sh"`
 Always read the source of what you run before you run it.
 
 Your interfaces are now displayed for you to replace `INTERFACE` in step 5 with your ethernet interface of choice.
@@ -62,7 +62,7 @@ pppwn -i INTERFACE --fw 1100 -s1 "/etc/pppwnwrt/stage1_1100.bin" -s2 "/etc/pppwn
 - Wait until `PPPwned` message appears
 - Head back to `Set Up Internet connection` and change to your normal internet settings or turn off internet connection
 
-From now on, your PS4 will be jailbroken everytime it is powered on, as long as it's connected to the router. Unfortunately, it does not have output, so the only way to determine if the script is running is by looking for `Cannot set up internet connection` message, or by looking for 'loading symbols' on the bottom of `What's new` app. Keep in mind, that script will run endlessly, so it will try to root your console even when it's already rooted. To prevent that, script waits 60 seconds after successful jailbreak, so you have time to turn off internet connection or change PPPoE to your usual internet settings. You don't need to do the internet connection set up again, just press `Test Internet Connection`, or if PPPoE already set up, wait until `PPPwned` message appears. The custom version of stage2 first looks for the payload in the root directory of the USB drive, and if found, it is copied to the internal HDD at this path: /data/GoldHEN/payloads/goldhen.bin. The internal payload is then loaded and is no longer needed on the external USB drive. You can remove the usb drive from your ps4 after it has been run the first time and you won't need it again.
+From now on, your PS4 will be jailbroken everytime it is powered on, as long as it's connected to the router. Unfortunately, the script does not have it's output, so the only ways to determine if it's injecting a payload is by looking for `Cannot set up internet connection` message, 'loading symbols' on the bottom of `What's new` app, or choppy audio. Keep in mind, that script will run endlessly, so it will try to root your console even when it's already rooted. To prevent that, script waits 60 seconds after successful jailbreak, so you have time to turn off internet connection or change from PPPoE to your usual internet settings. You don't need to do the internet connection set up again, just press `Test Internet Connection` after changing back to PPPoE, or if already set up, wait until `PPPwned` message appears. The custom version of stage2 first looks for the payload in the root directory of the USB drive, and if found, it is copied to the internal HDD at this path: /data/GoldHEN/payloads/goldhen.bin. The internal payload is then loaded and is no longer needed on the external USB drive. You can remove the usb drive from your ps4 after it has been run the first time and you won't need it again.
 
 ### Kill Script
 Comes with a kill script in /root that used Modded Warfare's [kill script](https://github.com/MODDEDWARFARE/PPPwn_WRT/blob/main/kill.sh) as a template, but was modified to work with this setup.
