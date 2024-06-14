@@ -1,4 +1,5 @@
 #!/bin/bash
+# Written by FalsePhilosopher & speedyes
 
 opkg update
 opkg install unzip coreutils-rm libpcap1
