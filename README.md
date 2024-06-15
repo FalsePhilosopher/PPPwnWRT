@@ -26,9 +26,13 @@ Cortex A7 build
 ```
 wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/CortexA7.sh | sh
 ```
-64 bit build
+ARM_64 build
 ```
-wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/x64.sh | sh
+wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/ARM_64.sh | sh
+```
+x86_64 build
+```
+wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/x86_64.sh | sh
 ```
 
 For the record: It is not actually a good idea to make a habit of
