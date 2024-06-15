@@ -3,6 +3,10 @@
 
 OpenWRT install of PPPwn C++ version by xfangfang https://github.com/xfangfang/PPPwn_cpp
 
+Current included PPPwn C++ release: v1.0.0
+
+Current included GoldHEN release: v2.4b17
+
 ### Install
 1. Place the goldhen.bin from a goldhen 2.4b17 and up release on the root of a usb drive formatted in exfat or fat32
 https://github.com/GoldHEN/GoldHEN/releases
@@ -44,6 +48,8 @@ For 11.00
 pppwn -i INTERFACE --fw 1100 -s1 "/etc/pppwnwrt/stage1_1100.bin" -s2 "/etc/pppwnwrt/stage2.bin" -a
 ```
 (If you're low on space, you can remove unneeded stage1.bin file)
+
+Note: included stage2.bin is GoldHEN. You can change it to whatever stage2.bin payload you want
 
 6. Enable auto-start in OpenWRT
 - `/etc/init.d/pppwnwrt enable`
