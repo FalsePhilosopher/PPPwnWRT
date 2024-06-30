@@ -3,7 +3,7 @@
 
 OpenWRT install of PPPwn C++ version by xfangfang https://github.com/xfangfang/PPPwn_cpp
 
-Current included PPPwn C++ release: v1.0.0
+Current included PPPwn C++ release: Nightly 20240616(June 30 2024) which includes the IPV6 fix for the "cursed consoles"
 
 Current included GoldHEN release: v2.4b17
 
@@ -21,6 +21,10 @@ wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/RPi.s
 MIPS build
 ```
 wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/MIPS.sh | sh
+```
+MIPS(Big Endian) build
+```
+wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/MIPSEL.sh | sh
 ```
 Cortex A7 build
 ```
