@@ -1,5 +1,12 @@
-
 # OpenWRT PPPwn
+
+**This repo is for people with a basic understanding of linux and networking, if terminals scare you then you stop reading and use something else such as.**  
+https://github.com/stooged/PI-Pwn  
+https://github.com/MODDEDWARFARE/PPPwn_WRT  
+https://github.com/0x1iii1ii/PPPwn-Luckfox  
+https://github.com/PokersKun/PPPwn-Loader  
+https://github.com/B-Dem/PPPwnUI  
+**If terminals don't scare you and you won't need halp plz with intall then continue reading**
 
 OpenWRT install of PPPwn C++ version by xfangfang https://github.com/xfangfang/PPPwn_cpp
 
