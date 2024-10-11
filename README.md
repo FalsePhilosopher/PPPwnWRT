@@ -67,8 +67,8 @@ pppwn -i INTERFACE --fw 1100 -s1 "/etc/pppwnwrt/stage1_1100.bin" -s2 "/etc/pppwn
 ```
 (If you're low on space, you can remove unneeded stage1.bin file)
 
-Note: included stage2.bin is GoldHEN. You can change it to whatever stage2.bin payload you want  
-For precompiled bins for FW 7.00-11.00 EchoStretch has you covered [here](https://github.com/EchoStretch/ps4-hen-vtx/releases)
+Note: included stage2.bin is GoldHEN for 9.0.0 or 11.0.0. You can change it to whatever stage2.bin GoldHen payload you want to be able to support some FW 5.05 - 11.0.0  
+For those on FW not supported by a GoldHEN release, EchoStretch has you covered [here](https://github.com/EchoStretch/ps4-hen-vtx/releases) with precompiled bins for every FW 7.00-11.00 
 
 6. Enable auto-start in OpenWRT
 - `/etc/init.d/pppwnwrt enable`
