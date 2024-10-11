@@ -18,7 +18,7 @@ Current included PPPwn C++ release: Nightly 20240616(June 30 2024) which include
 Current included GoldHEN release: v2.4b17
 
 ### Install
-1. Place the goldhen.bin from a goldhen 2.4b17 and up release on the root of a usb drive formatted in exfat or fat32
+1. Place the goldhen.bin from a goldhen 2.4b17 and up release on the root of a usb drive formatted in exfat or fat32  
 https://github.com/GoldHEN/GoldHEN/releases
 2. Plug the USB drive into your PS4
 3. SSH into your OpenWRT router
