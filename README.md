@@ -1,9 +1,12 @@
 # OpenWRT PPPwn
 
 **This repo is for people with a basic understanding of linux and networking, if terminals scare you then stop reading and use something else such as.**  
-https://github.com/DrYenyen/PPPwn-Tinker-GUI  
-https://github.com/stooged/PI-Pwn  
+*OpenWRT specific*  
+https://github.com/CodeInvers3/PPPwn_ow  
 https://github.com/MODDEDWARFARE/PPPwn_WRT  
+*Other HW*  
+https://github.com/DrYenyen/PPPwn-Tinker-GUI  
+https://github.com/stooged/PI-Pwn
 https://github.com/0x1iii1ii/PPPwn-Luckfox  
 https://github.com/PokersKun/PPPwn-Loader  
 https://github.com/B-Dem/PPPwnUI  
