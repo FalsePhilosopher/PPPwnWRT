@@ -18,10 +18,8 @@ https://github.com/B-Dem/PPPwnUI
 
 Current included PPPwn C++ release: Nightly 20240616(June 30 2024) which includes the IPV6 fix for the "cursed consoles"
 
-Current included GoldHEN release: v2.4b17
-
 ### Install
-1. Place the goldhen.bin from a goldhen 2.4b17 and up release on the root of a usb drive formatted in exfat or fat32  
+1. Place the [goldhen.bin](https://ko-fi.com/sistro/shop) from a goldhen v2.4b18.2 and up release on the root of a usb drive formatted in exfat or fat32  
 https://github.com/GoldHEN/GoldHEN/releases
 2. Plug the USB drive into your PS4
 3. SSH into your OpenWRT router
@@ -90,7 +88,7 @@ For those on FW not supported by a GoldHEN release, EchoStretch has you covered 
 - Wait until `PPPwned` message appears
 - Head back to `Set Up Internet connection` and change to your normal internet settings or turn off internet connection
 
-From now on, your PS4 will be jailbroken everytime it is powered on, as long as it's connected to the router. Unfortunately, the script does not have it's output, so the only ways to determine if it's injecting a payload is by looking for `Cannot set up internet connection` message, 'loading symbols' on the bottom of `What's new` app, or choppy audio. Keep in mind, that script will run endlessly, so it will try to root your console even when it's already rooted. To prevent that, script waits 60 seconds after successful jailbreak, so you have time to turn off internet connection or change from PPPoE to your usual internet settings. You don't need to do the internet connection set up again, just press `Test Internet Connection` after changing back to PPPoE, or if already set up, wait until `PPPwned` message appears. The custom version of stage2 first looks for the payload in the root directory of the USB drive, and if found, it is copied to the internal HDD at this path: /data/GoldHEN/payloads/goldhen.bin. The internal payload is then loaded and is no longer needed on the external USB drive. You can remove the usb drive from your ps4 after it has been run the first time and you won't need it again.
+From now on, your PS4 will be jailbroken everytime it is powered on, as long as it's connected to the router. Unfortunately, the script does not have it's output, so the only ways to determine if it's injecting a payload is by looking for `Cannot set up internet connection` message, 'loading symbols' on the bottom of `What's new` app, or choppy audio. The custom version of stage2 first looks for the payload in the root directory of the USB drive, and if found, it is copied to the internal HDD at this path: /data/GoldHEN/payloads/goldhen.bin. The internal payload is then loaded and is no longer needed on the external USB drive. You can remove the usb drive from your ps4 after it has been run the first time and you won't need it again.
 
 ### Kill Script
 Comes with a kill script in /root that used Modded Warfare's [kill script](https://github.com/MODDEDWARFARE/PPPwn_WRT/blob/main/kill.sh) as a template, but was modified to work with this setup.
