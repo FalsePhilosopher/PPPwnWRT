@@ -20,7 +20,6 @@ Current included PPPwn C++ release: Nightly 20240616(June 30 2024) which include
 
 ### Install
 1. Place the [goldhen.bin](https://ko-fi.com/sistro/shop) from a goldhen v2.4b18.2 and up release on the root of a usb drive formatted in exfat or fat32  
-https://github.com/GoldHEN/GoldHEN/releases
 2. Plug the USB drive into your PS4
 3. SSH into your OpenWRT router
 4. Run for:
@@ -51,12 +50,12 @@ wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/x86_6
 ```
 
 For the record: It is not actually a good idea to make a habit of
-`wget $(random_script_from_the_internets) | sh"`
-Always read the source of what you run before you run it.
+`wget random_script_from_the_internets | sh`
+Always read the source of what you run BEFORE you run it!
 
 Your interfaces are now displayed for you to replace `INTERFACE` in step 5 with your ethernet interface of choice.
 
-5. Edit `/etc/pppwnwrt/pppwnwrt.sh` script
+5. Edit `/etc/pppwnwrt/pppwnwrt.sh`
 
 For 9.00
 ```
@@ -148,12 +147,9 @@ If you set up auto-start, disable it by running `/etc/init.d/pppwnwrt disable` a
 Further resources with LED examples can be found here https://openwrt.org/docs/guide-user/hardware/hardware.button
 
 ### Manual Install
-1. git clone sistro's pppwn repo and build pppwn S1 and S2 PL's for your FW
-https://github.com/SiSTR0/PPPwn
+1. git clone sistro's pppwn (repo)[https://github.com/SiSTR0/PPPwn] and build pppwn S1 and S2 PL's for your FW
 2. Put the S1 and S2 PL's in a dir name `pppwnwrt` and scp or sftp the dir to /etc
-3. git clone and build pppwn_cpp or pull from their nightly build server
-Repo: https://github.com/xfangfang/PPPwn_cpp
-Nightly build server: https://nightly.link/xfangfang/PPPwn_cpp/workflows/ci.yaml/main?status=completed
+3. git clone and build (pppwn_cpp)[https://github.com/xfangfang/PPPwn_cpp] or pull from their nightly build (server)[https://nightly.link/xfangfang/PPPwn_cpp/workflows/ci.yaml/main?status=completed]
 4. scp or sftp the executable to /bin
 5. Install libpcap1
 6. Run pppwn
