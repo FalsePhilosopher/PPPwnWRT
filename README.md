@@ -16,7 +16,7 @@ https://github.com/B-Dem/PPPwnUI
 
 # OpenWRT install of [PPPwn_cpp by xfangfang](https://github.com/xfangfang/PPPwn_cpp)
 
-Current included PPPwn C++ release: Nightly 20240616(June 30 2024) which includes the IPV6 fix for the "cursed consoles"
+Currently included is PPPwn C++ release: Nightly 20240616(June 30 2024) which includes the IPV6 fix for the "cursed consoles" and goldhen stage2 payload v1.04.
 
 If installing for OpenWRT 23.05 or below follow the 23.05 install scripts below the 24.XX+ install scripts as 23.05 and below uses a different package manger.
 
