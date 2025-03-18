@@ -1,8 +1,8 @@
 #!/bin/bash
 # Written by FalsePhilosopher & speedyes
 
-apk update
-apk add unzip coreutils-rm libpcap1
+opkg update
+opkg install unzip coreutils-rm libpcap1
 cd /tmp
 wget https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/zips/files.zip
 wget https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/zips/MIPS.zip

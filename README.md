@@ -18,6 +18,8 @@ https://github.com/B-Dem/PPPwnUI
 
 Current included PPPwn C++ release: Nightly 20240616(June 30 2024) which includes the IPV6 fix for the "cursed consoles"
 
+If installing for OpenWRT 23.05 or below follow the 23.05 install scripts below the 24.XX+ install scripts as 23.05 and below uses a different package manger.
+
 ### Install
 1. Place the [goldhen.bin](https://ko-fi.com/sistro/shop) from a goldhen v2.4b18.2 and up release on the root of a usb drive formatted in exfat or fat32  
 2. Plug the USB drive into your PS4
@@ -47,6 +49,32 @@ wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/ARM_6
 x86_64 build
 ```
 wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/x86_64.sh | sh
+```
+# 23.05 and below ONLY!
+
+Raspberry Pi build:
+```
+wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/23/RPi.sh | sh
+```
+MIPS build
+```
+wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/23/MIPS.sh | sh
+```
+MIPS(Big Endian) build
+```
+wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/23/MIPSEL.sh | sh
+```
+Cortex A7 build
+```
+wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/23/CortexA7.sh | sh
+```
+ARM_64 build
+```
+wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/23/ARM_64.sh | sh
+```
+x86_64 build
+```
+wget -q -O - https://github.com/FalsePhilosopher/PPPwnWRT/raw/main/scripts/23/x86_64.sh | sh
 ```
 
 For the record: It is not actually a good idea to make a habit of
