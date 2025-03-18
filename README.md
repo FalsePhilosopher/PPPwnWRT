@@ -87,16 +87,18 @@ Your interfaces are now displayed for you to replace `INTERFACE` in step 5 with 
 
 For 9.00
 ```
-pppwn -i INTERFACE --fw 900 -s1 "/etc/pppwnwrt/stage1_900.bin" -s2 "/etc/pppwnwrt/stage2.bin" -a
+pppwn -i INTERFACE --fw 900 -s1 "/etc/pppwnwrt/stage1_900.bin" -s2 "/etc/pppwnwrt/stage2_9.00.bin" -a
 ```
 For 11.00
 ```
-pppwn -i INTERFACE --fw 1100 -s1 "/etc/pppwnwrt/stage1_1100.bin" -s2 "/etc/pppwnwrt/stage2.bin" -a
+pppwn -i INTERFACE --fw 1100 -s1 "/etc/pppwnwrt/stage1_1100.bin" -s2 "/etc/pppwnwrt/stage2_11.00.bin" -a
 ```
-(If you're low on space, you can remove unneeded stage1.bin file)
+The included Stage 1 payloads are for 9.00 or 11.00, you can compile the S1 PL for a different FW following SiSTR0's PPPwn use [instructions](https://github.com/SiSTR0/PPPwn#usage)  
+(If you're low on space, you can remove unneeded stage1.bin file for different FW)
 
-Note: included stage2.bin is GoldHEN for 9.0.0 or 11.0.0. You can change it to whatever stage2.bin GoldHen payload you want to be able to support some FW 5.05 - 11.0.0  
-For those on FW not supported by a GoldHEN release, EchoStretch has you covered [here](https://github.com/EchoStretch/ps4-hen-vtx/releases) with precompiled bins for every FW 7.00-11.00 
+Note: included stage2.bin is GoldHEN for FW 9.00 and 11.0.0. You can change it to whatever [stage2.bin](https://github.com/SiSTR0/PPPwn/releases) GoldHen payload you want to be able to support some FW 9.00 - 11.0.0  
+For those on FW not supported by a GoldHEN release, EchoStretch has you covered [here](https://github.com/EchoStretch/ps4-hen-vtx/releases) with precompiled bins for every FW 7.00-11.00  
+(If you're low on space, you can remove unneeded stage2.bin file for different FW)
 
 6. Enable auto-start in OpenWRT
 - `/etc/init.d/pppwnwrt enable`
