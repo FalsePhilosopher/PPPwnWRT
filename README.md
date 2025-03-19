@@ -125,7 +125,13 @@ The original script used [this resource](https://askubuntu.com/questions/180336/
 
 ### WPS Button Exploit Trigger
 1. Install kmod-button-hotplug
-`opkg install kmod-button-hotplug`
+```
+apk add kmod-button-hotplug`
+```
+for 23.05 and below systems 
+```
+opkg install kmod-button-hotplug`
+```
 2. Create a file called `wps` in /etc/hotplug.d/button/ with the contents below.
 ```
 source /lib/functions.sh
