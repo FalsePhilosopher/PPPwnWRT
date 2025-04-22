@@ -3,8 +3,7 @@
 **This repo is for people with a basic understanding of linux and networking, if terminals scare you then stop reading and use something else such as.**  
 *OpenWRT specific*  
 https://github.com/CodeInvers3/PPPwn_ow  
-https://github.com/MODDEDWARFARE/PPPwn_WRT (This project is outdated, use the 24.XX branch of my [fork](https://github.com/FalsePhilosopher/PPPwn_WRT/tree/24.XX%2B) for support on OpenWRT 24.XX+ systems and 9.03 FW)  
-
+https://github.com/MODDEDWARFARE/PPPwn_WRT  
 *Other HW*  
 https://github.com/DrYenyen/PPPwn-Tinker-GUI  
 https://github.com/stooged/PI-Pwn
